@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pmmp_form.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/wdforms_form.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPacketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPlayerSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPlayerSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/WDForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/WDForms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/forms/elements/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/forms/elements/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/forms/types/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/forms/types/MenuForm.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/xxAROX/WDforms/WDForms.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPlayerSession.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPacketHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/wdforms_form.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/xxAROX/WDforms/forms/types/Form.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/pmmp_form.json" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="2NxgkaPZ8cIkgeBRZN5AimmUHZc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kfeig\Documents\Development\xxAROX\.customers\WD-forms\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kfeig\Documents\Development\xxAROX\.customers\WD-forms\src\main\resources" />
+      <recent name="C:\Users\kfeig\Documents\Development\xxAROX\.customers\WD-forms\src\main\java" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="" />
+      <created>1680611292290</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680611292290</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Base, but crash must be fixed">
+      <created>1680619718513</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680619718513</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Base, but crash must be fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base, but crash must be fixed" />
+  </component>
+</project>

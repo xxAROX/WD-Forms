@@ -47,10 +47,10 @@ public class MenuForm extends Form{
     @Override
     protected JsonObject serializeFormData() {
         JsonObject json = new JsonObject();
-        json.addProperty("content", text);
         JsonArray jsonArray = new JsonArray();
         for (Button btn : buttons) jsonArray.add(btn.jsonSerialize());
         json.add("buttons", jsonArray);
+        json.addProperty("content", text);
         return json;
     }
 }

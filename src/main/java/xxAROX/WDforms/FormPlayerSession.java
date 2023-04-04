@@ -14,7 +14,7 @@ public class FormPlayerSession {
     @Getter private final ProxiedPlayer player;
 
     private int formIdCounter = 0;
-    private HashMap<Integer, Form> forms = new HashMap<>();
+    private final HashMap<Integer, Form> forms = new HashMap<>();
 
     public FormPlayerSession(ProxiedPlayer player){
         this.player = player;
@@ -46,12 +46,10 @@ public class FormPlayerSession {
         int formId = nextFormId();
         String formData = (new Gson().toJson(form.jsonSerialize()));
         forms.put(formId, form);
-
         ModalFormRequestPacket formRequestPacket = new ModalFormRequestPacket();
         formRequestPacket.setFormId(formId);
         formRequestPacket.setFormData(formData);
-        player.sendPacket(formRequestPacket);
-        System.out.println("Form sent: " + formRequestPacket);
+        player.sendPacketImmediately(formRequestPacket);
     }
 
     public Integer nextFormId(){return ++formIdCounter;}

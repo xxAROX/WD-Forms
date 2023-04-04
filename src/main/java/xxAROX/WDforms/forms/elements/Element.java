@@ -27,7 +27,7 @@ abstract public class Element {
         JsonObject json = new JsonObject();
         JsonObject json2 = this.serializeElementData();
         json.addProperty("text", text);
-        if (this.getType() != null) json.addProperty("type", this.getType().toString());
+        if (this.getType() != null && !this.getType().equals(Type.BUTTON)) json.addProperty("type", this.getType().toString());
         if (this.defaultValue != null) {
             if (this.defaultValue instanceof Boolean) json.addProperty("default", (Boolean) this.defaultValue);
             else if (this.defaultValue instanceof Number) json.addProperty("default", (Number) this.defaultValue);

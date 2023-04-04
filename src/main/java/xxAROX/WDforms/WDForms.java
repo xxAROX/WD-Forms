@@ -2,7 +2,12 @@ package xxAROX.WDforms;
 
 import com.nukkitx.protocol.bedrock.packet.ModalFormRequestPacket;
 import com.nukkitx.protocol.bedrock.packet.ModalFormResponsePacket;
+import com.nukkitx.protocol.bedrock.packet.ServerSettingsRequestPacket;
+import com.nukkitx.protocol.bedrock.packet.ServerSettingsResponsePacket;
 import com.nukkitx.protocol.bedrock.v291.serializer.ModalFormRequestSerializer_v291;
+import com.nukkitx.protocol.bedrock.v291.serializer.ModalFormResponseSerializer_v291;
+import com.nukkitx.protocol.bedrock.v291.serializer.ServerSettingsRequestSerializer_v291;
+import com.nukkitx.protocol.bedrock.v291.serializer.ServerSettingsResponseSerializer_v291;
 import com.nukkitx.protocol.bedrock.v544.serializer.ModalFormResponseSerializer_v544;
 import dev.waterdog.waterdogpe.command.Command;
 import dev.waterdog.waterdogpe.command.CommandSender;
@@ -39,7 +44,7 @@ public class WDForms extends Plugin {
             public boolean onExecute(CommandSender commandSender, String s, String[] strings) {
                 if (!(commandSender instanceof ProxiedPlayer player)) {
                     commandSender.sendMessage("Only for players.");
-                    return false;
+                    return true;
                 } else {
                     player.sendMessage("Sending form..");
                     FormPlayerSession session = WDForms.getSession(player);
@@ -50,15 +55,13 @@ public class WDForms extends Plugin {
                     buttons.add(new Button("Button", ((player1, button) -> player1.sendMessage(button.getText()))));
                     session.sendForm(new MenuForm(
                             "Menu form",
-                            "text",
+                            "text content",
                             buttons,
-                            player1 -> {
-                                player1.sendMessage("Form closed!");
-                            }
+                            player1 -> player1.sendMessage("Form closed!")
                     ));
                     player.sendMessage("Form sent!");
                 }
-                return false;
+                return true;
             }
         });
     }
@@ -69,8 +72,10 @@ public class WDForms extends Plugin {
     public void PlayerLoginEvent(PlayerLoginEvent event){sessions.put(event.getPlayer(), new FormPlayerSession(event.getPlayer()));}
     public void ProtocolCodecRegisterEvent(ProtocolCodecRegisterEvent event){
         event.getCodecBuilder()
-                .registerPacket(ModalFormResponsePacket.class, ModalFormResponseSerializer_v544.INSTANCE, 100)
-                .registerPacket(ModalFormRequestPacket.class, ModalFormRequestSerializer_v291.INSTANCE, 101)
+                .registerPacket(ModalFormResponsePacket.class, ModalFormResponseSerializer_v544.INSTANCE, 0x65)
+                .registerPacket(ModalFormRequestPacket.class, ModalFormRequestSerializer_v291.INSTANCE, 0x64)
+                .registerPacket(ServerSettingsRequestPacket.class, ServerSettingsRequestSerializer_v291.INSTANCE, 0x66)
+                .registerPacket(ServerSettingsResponsePacket.class, ServerSettingsResponseSerializer_v291.INSTANCE, 0x67)
         ;
     }
     public static FormPlayerSession getSession(ProxiedPlayer player){return sessions.getOrDefault(player, null);}
