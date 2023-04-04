@@ -1,10 +1,11 @@
 package xxAROX.WDforms;
 
 import com.google.gson.Gson;
-import com.nukkitx.protocol.bedrock.packet.*;
-import dev.waterdog.waterdogpe.network.session.bedrock.BedrockDefaultSession;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import lombok.Getter;
+import org.cloudburstmc.protocol.bedrock.packet.ModalFormRequestPacket;
+import org.cloudburstmc.protocol.bedrock.packet.ModalFormResponsePacket;
+import org.cloudburstmc.protocol.common.PacketSignal;
 import xxAROX.WDforms.forms.FormValidationError;
 import xxAROX.WDforms.forms.types.Form;
 
@@ -18,16 +19,16 @@ public class FormPlayerSession {
 
     public FormPlayerSession(ProxiedPlayer player){
         this.player = player;
-        this.player.getPluginDownstreamHandlers().add(new FormPacketHandler(this));
+        this.player.getPluginPacketHandlers().add(new FormPacketHandler(this));
     }
 
     /**
      * @internal
      */
-    public boolean response(ModalFormResponsePacket packet){
+    public PacketSignal response(ModalFormResponsePacket packet){
         if (!forms.containsKey(packet.getFormId())) {
             WDForms.getInstance().getLogger().debug("Got unexpected response for form " + packet.getFormId());
-            return false;
+            return PacketSignal.UNHANDLED;
         }
         try {
             System.out.println("Response: " + packet.getFormData());
@@ -39,7 +40,7 @@ public class FormPlayerSession {
         } finally {
             forms.remove(packet.getFormId());
         }
-        return true;
+        return PacketSignal.HANDLED;
     }
 
     public void sendForm(Form form){
@@ -52,5 +53,5 @@ public class FormPlayerSession {
         player.sendPacketImmediately(formRequestPacket);
     }
 
-    public Integer nextFormId(){return ++formIdCounter;}
+    public Integer nextFormId(){return --formIdCounter;}
 }
