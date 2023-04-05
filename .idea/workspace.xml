@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="Works, but handling not">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="Added form image fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/util/FormImageFix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPacketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPlayerSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/FormPlayerSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/WDForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDforms/WDForms.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -85,12 +90,20 @@
       <option name="project" value="LOCAL" />
       <updated>1680638098986</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="WaterdogPE v2">
+      <created>1680641529827</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680641529827</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Base, but crash must be fixed" />
     <MESSAGE value="Works, but handling not" />
-    <option name="LAST_COMMIT_MESSAGE" value="Works, but handling not" />
+    <MESSAGE value="WaterdogPE v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="WaterdogPE v2" />
   </component>
 </project>

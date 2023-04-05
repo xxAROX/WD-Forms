@@ -58,7 +58,7 @@ public class WDForms extends Plugin {
                     ArrayList<Button> buttons = new ArrayList<>();
                     buttons.add(new Button("§cClose"));
                     buttons.add(new Button("Apple", Image.textures("textures/items/apple")));
-                    buttons.add(new Button("Ingot", Image.textures("items/iron_ingot")));
+                    buttons.add(new Button("Ingot", Image.url("https://avatars.githubusercontent.com/u/57589973?v=4")));
                     buttons.add(new Button("Button", ((player1, button) -> player1.sendMessage(button.getText()))));
                     session.sendForm(new MenuForm(
                             "Menu form",
