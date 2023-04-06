@@ -1,4 +1,4 @@
-package xxAROX.WDforms.forms;
+package xxAROX.WDForms.forms;
 
 public class FormValidationError extends RuntimeException{
     public FormValidationError(String message) {

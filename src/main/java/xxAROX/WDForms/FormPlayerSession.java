@@ -1,13 +1,14 @@
-package xxAROX.WDforms;
+package xxAROX.WDForms;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import lombok.Getter;
 import org.cloudburstmc.protocol.bedrock.packet.ModalFormRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.ModalFormResponsePacket;
 import org.cloudburstmc.protocol.common.PacketSignal;
-import xxAROX.WDforms.forms.FormValidationError;
-import xxAROX.WDforms.forms.types.Form;
+import xxAROX.WDForms.forms.FormValidationError;
+import xxAROX.WDForms.forms.types.Form;
 
 import java.util.HashMap;
 
@@ -31,10 +32,9 @@ public class FormPlayerSession {
             return PacketSignal.UNHANDLED;
         }
         try {
-            System.out.println("Response: " + packet.getFormData());
             Form form = forms.get(packet.getFormId());
-            form.handleResponse(player, packet.getFormData());
-        } catch (FormValidationError error) {
+            form.handleResponse(player, new JsonMapper().readTree(packet.getFormData().trim()));
+        } catch (FormValidationError | JsonProcessingException error) {
             WDForms.getInstance().getLogger().error("Failed to validate form " + forms.getClass().getSimpleName() + ": " + error.getMessage());
             WDForms.getInstance().getLogger().error(error);
         } finally {
@@ -43,9 +43,15 @@ public class FormPlayerSession {
         return PacketSignal.HANDLED;
     }
 
-    public void sendForm(Form form){
+    public void sendForm(Form form) {
         int formId = nextFormId();
-        String formData = (new Gson().toJson(form.jsonSerialize()));
+        String formData = null;
+        try {
+            formData = new JsonMapper().writeValueAsString(form);
+        } catch (JsonProcessingException e) {
+            WDForms.getInstance().getLogger().error("Error while serializing form: ", e);
+        }
+        if (formData == null) return;
         forms.put(formId, form);
         ModalFormRequestPacket formRequestPacket = new ModalFormRequestPacket();
         formRequestPacket.setFormId(formId);
