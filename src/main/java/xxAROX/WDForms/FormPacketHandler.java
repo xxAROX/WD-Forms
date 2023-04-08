@@ -8,6 +8,6 @@ import org.cloudburstmc.protocol.common.PacketSignal;
 
 public record FormPacketHandler(FormPlayerSession session) implements PluginPacketHandler {
     @Override public PacketSignal handlePacket(BedrockPacket packet, PacketDirection direction) {
-        return direction.equals(PacketDirection.FROM_USER) && (packet instanceof ModalFormResponsePacket modalFormResponsePacket) ? session.response(modalFormResponsePacket) : PacketSignal.UNHANDLED;
+        return direction.equals(PacketDirection.FROM_USER) && (packet instanceof ModalFormResponsePacket modalFormResponsePacket) && modalFormResponsePacket.getFormId() < 0 ? session.response(modalFormResponsePacket) : PacketSignal.UNHANDLED;
     }
 }
