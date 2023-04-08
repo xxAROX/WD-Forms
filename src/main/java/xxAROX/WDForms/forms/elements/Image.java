@@ -19,6 +19,7 @@ public class Image {
 
     public static Image textures(String data){return new Image(data, Type.TEXTURES);}
     public static Image url(String url){return new Image(url, Type.URL);}
+    public static Image create(String data){return new Image(data, data.startsWith("http") ? Type.URL : Type.TEXTURES);}
 
     private Image(String data, Type type) {
         this.data = data;
@@ -30,9 +31,8 @@ public class Image {
         @JsonProperty("url") URL
     }
     static final class ImageSerializer extends JsonSerializer<Image> {
-        @Override
-        public void serialize(Image image, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-            if (image.getData() == null || image.getData().isEmpty() || image.getType() == null) {
+        @Override public void serialize(Image image, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
+            if (image == null || image.getData() == null || image.getData().isEmpty() || image.getType() == null) {
                 jsonGenerator.writeNull();
                 return;
             }
