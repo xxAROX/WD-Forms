@@ -42,7 +42,7 @@ public class ModalForm extends Form<Boolean>{
             return this;
         }
         public ModalFormBuilder trueButton(@NonNull String text) {
-            this.falseButton = text;
+            this.trueButton = text;
             return this;
         }
         public ModalFormBuilder falseButton(@NonNull String text) {
