@@ -24,7 +24,6 @@ public class WDForms extends Plugin {
         instance = this;
     }
     @Override public void onEnable() {
-        getLogger().info("Enabled!");
         getProxy().getEventManager().subscribe(PlayerLoginEvent.class, (event -> {
             FormPlayerSession session = new FormPlayerSession(event.getPlayer());
             sessions.put(event.getPlayer(), session);
@@ -36,10 +35,6 @@ public class WDForms extends Plugin {
                 .registerPacket(ServerSettingsResponsePacket::new, ServerSettingsResponseSerializer_v291.INSTANCE, 0x67)
         );
     }
-    @Override public void onDisable() {
-        getLogger().info("Disabled!");
-    }
-
     public void PlayerLoginEvent(PlayerLoginEvent event){sessions.put(event.getPlayer(), new FormPlayerSession(event.getPlayer()));}
     public static FormPlayerSession getSession(ProxiedPlayer player){return sessions.getOrDefault(player, null);}
 }

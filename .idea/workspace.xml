@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="Updated version">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/WDForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/WDForms.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680959610388</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Updated version">
+      <created>1680959736954</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680959736954</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -167,7 +175,8 @@
     <MESSAGE value="Fixed plugin.yml" />
     <MESSAGE value="Ignoring downstream forms" />
     <MESSAGE value="Added Form.sendTo(ProxiedPlayer)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Form.sendTo(ProxiedPlayer)" />
+    <MESSAGE value="Updated version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated version" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
