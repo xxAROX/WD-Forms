@@ -10,42 +10,43 @@ package xxAROX.WDForms.documentation;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import dev.waterdog.waterdogpe.plugin.Plugin;
 import xxAROX.WDForms.FormPlayerSession;
+import xxAROX.WDForms.forms.elements.Image;
+import xxAROX.WDForms.forms.types.CustomForm;
 import xxAROX.WDForms.forms.types.Form;
+import xxAROX.WDForms.forms.types.ModalForm;
 
-public class plugin extends Plugin {
-    public FormPlayerSession getSession(ProxiedPlayer player){return WDForms.getSession(player);}
-
+public class Documentation extends Plugin {
     public void sendMenuForm(ProxiedPlayer player) {
-        getSession(player).sendForm(Form.menu()
+        MenuForm form = MenuForm.menu()
                 .title("Menu form")
                 .content("Content")
                 .button("§cClose")
                 .button("Button #1", (button) -> player.sendMessage("You pressed: " + button.getText()))
                 .button("Button #2", (button) -> player.sendMessage("You pressed: " + button.getText()))
                 .button("Button #3", (button) -> player.sendMessage("You pressed: " + button.getText()))
-                .button("Button #4", (button) -> player.sendMessage("You pressed: " + button.getText()))
-                .button("Button #5", (button) -> player.sendMessage("You pressed: " + button.getText()))
+                .button("Button #4", Image.url("https://avatars.githubusercontent.com/u/57589973?s=128&v=4"), (button) -> player.sendMessage("You pressed: " + button.getText()))
+                .button("Button #5", Image.textures("textures/items/iron_ingot"), (button) -> player.sendMessage("You pressed: " + button.getText()))
                 .onSubmit((response) -> player.sendMessage("Clicked: " + response.button() + "!"))
                 .onClose(() -> player.sendMessage("Form closed!"))
                 .onError((e) -> player.sendMessage("§cError§f: §7" + e.getMessage()))
-                .build()
-        );
+                .build();
+        form.sendTo(player);
     }
-    
+
     public void sendModalForm(ProxiedPlayer player) {
-        getSession(player).sendForm(Form.modal()
+        ModalForm form = ModalForm.modal()
                 .title("Modal form")
                 .content("Content")
                 .trueButton("true")
                 .falseButton("false")
                 .onSubmit((response) -> player.sendMessage("Clicked: " + response + "!"))
                 .onError((e) -> player.sendMessage("§cError§f: §7" + e.getMessage()))
-                .build()
-        );
+                .build();
+        form.sendTo(player);
     }
-    
+
     public void sendCustomForm(ProxiedPlayer player) {
-        getSession(player).sendForm(Form.custom()
+        CustomForm form = CustomForm.custom()
                 .title("Custom form")
                 .label("Label")
                 .input("Input", input -> player.sendMessage(input.getValue()))
@@ -56,8 +57,8 @@ public class plugin extends Plugin {
                 .onSubmit(response -> player.sendMessage("Form submitted!\n" + response.toString()))
                 .onClose(() -> player.sendMessage("Form closed!"))
                 .onError(e -> player.sendMessage("§cError§f: §7" + e.getMessage()))
-                .build()
-        );
+                .build();
+        form.sendTo(player);
     }
 }
 ```
