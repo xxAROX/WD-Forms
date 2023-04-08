@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/FormPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/FormPacketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/Form.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/MenuForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680823368117</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ignoring downstream forms">
+      <created>1680959526216</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680959526216</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -152,7 +159,8 @@
     <MESSAGE value="done!" />
     <MESSAGE value="Ready for production" />
     <MESSAGE value="Fixed plugin.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed plugin.yml" />
+    <MESSAGE value="Ignoring downstream forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignoring downstream forms" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

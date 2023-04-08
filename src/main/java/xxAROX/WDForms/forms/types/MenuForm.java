@@ -74,11 +74,11 @@ public class MenuForm extends Form<MenuForm.Response> {
             this.buttons.add(new Button(text, handle));
             return this;
         }
-        public MenuFormBuilder button(@NonNull String text, @NonNull Image image) {
+        public MenuFormBuilder button(@NonNull String text, Image image) {
             this.buttons.add(new Button(text, image));
             return this;
         }
-        public MenuFormBuilder button(@NonNull String text, @NonNull Image image, Consumer<Button> handle) {
+        public MenuFormBuilder button(@NonNull String text, Image image, Consumer<Button> handle) {
             this.buttons.add(new Button(text, image, handle));
             return this;
         }

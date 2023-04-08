@@ -36,6 +36,7 @@ abstract public class Form<FormResponse> {
         WDForms.getInstance().getLogger().error(error);
         if (onError != null) onError.accept(error);
     }
+    public final void sendTo(ProxiedPlayer player){WDForms.getSession(player).sendForm(this);}
 
 
     public static MenuForm.MenuFormBuilder menu(){return new MenuForm.MenuFormBuilder();}
