@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 @Getter
@@ -47,14 +48,21 @@ public class MenuForm extends Form<MenuForm.Response> {
             error(new FormValidationError("Button with index '" + node + "' does not exist"));
             return;
         }
-        button.click();
-        submit(new Response(index, button));
+        button.click(player);
+        submit(new Response(index, button, player));
     }
 
-    public record Response(int index, Button button) {
+    public record Response(int index, Button button, ProxiedPlayer player) {
         @Override public Button button() {return button;}
         @Override public int index() {return index;}
-        @Override public String toString() {return "Response{index=" + index + ", button=" + button + "}";}
+        @Override public ProxiedPlayer player() {return player;}
+        @Override public String toString() {
+            return "Response{" +
+                    "index=" + index +
+                    ", button=" + button +
+                    ", player=" + player.getName() +
+                    '}';
+        }
     }
     public static class MenuFormBuilder extends FormBuilder<MenuForm, MenuFormBuilder, MenuForm.Response> {
         private String content = "";
@@ -74,12 +82,20 @@ public class MenuForm extends Form<MenuForm.Response> {
             this.buttons.add(new Button(text, handle));
             return this;
         }
+        public MenuFormBuilder button(@NonNull String text, BiConsumer<Button, ProxiedPlayer> playerHandler) {
+            this.buttons.add(new Button(text, playerHandler));
+            return this;
+        }
         public MenuFormBuilder button(@NonNull String text, Image image) {
             this.buttons.add(new Button(text, image));
             return this;
         }
         public MenuFormBuilder button(@NonNull String text, Image image, Consumer<Button> handle) {
             this.buttons.add(new Button(text, image, handle));
+            return this;
+        }
+        public MenuFormBuilder button(@NonNull String text, Image image, BiConsumer<Button, ProxiedPlayer> playerHandler) {
+            this.buttons.add(new Button(text, image, playerHandler));
             return this;
         }
         public MenuFormBuilder buttons(@NonNull Button... buttons) {
