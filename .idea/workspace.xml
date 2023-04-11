@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" afterDir="false" />
-    </list>
+    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,8 +197,26 @@
       <option name="project" value="LOCAL" />
       <updated>1681140560920</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Better form response for my projects">
+      <created>1681255108687</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1681255108687</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -223,7 +238,8 @@
     <MESSAGE value="added player handler bi-consumer to custom forms" />
     <MESSAGE value="added player handler bi-consumer to menu forms" />
     <MESSAGE value="added Bi-Consumer&lt;element, player&gt; handler to all forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Bi-Consumer&lt;element, player&gt; handler to all forms" />
+    <MESSAGE value="Better form response for my projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Better form response for my projects" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

@@ -35,6 +35,5 @@ public class WDForms extends Plugin {
                 .registerPacket(ServerSettingsResponsePacket::new, ServerSettingsResponseSerializer_v291.INSTANCE, 0x67)
         );
     }
-    public void PlayerLoginEvent(PlayerLoginEvent event){sessions.put(event.getPlayer(), new FormPlayerSession(event.getPlayer()));}
     public static FormPlayerSession getSession(ProxiedPlayer player){return sessions.getOrDefault(player, null);}
 }
