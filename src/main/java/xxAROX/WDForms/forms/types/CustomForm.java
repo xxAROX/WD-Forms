@@ -53,71 +53,74 @@ public class CustomForm extends Form<CustomForm.Response>{
         super.submit(response);
     }
 
-    @ToString(exclude = "form")
+    @ToString
     public static class Response {
-        private final CustomForm form;
         private final JsonNode responses;
         @Getter private final ProxiedPlayer player;
-        private JsonNode get(int index) {return responses.get(index);}
+        private final List<Dropdown> dropdowns = new ArrayList<>();
+        private final List<Input> inputs = new ArrayList<>();
+        private final List<Slider> sliders = new ArrayList<>();
+        private final List<StepSlider> step_sliders = new ArrayList<>();
+        private final List<Toggle> toggles = new ArrayList<>();
 
         public Response(CustomForm form, JsonNode responses, ProxiedPlayer player){
-            this.form = form;
             this.responses = responses;
             this.player = player;
 
             for (int i=0; i<form.elements.size(); i++) {
                 Element element = form.getElement(i);
-                JsonNode node = get(i);
-                if (element instanceof Dropdown) {
+                JsonNode node = responses.get(i);
+                if (element instanceof Dropdown e) {
                     if (!node.isInt()) wrongValue(i, "dropdown");
-                    ((Dropdown) element).setValue(node.asInt());
+                    e.setValue(node.asInt());
+                    dropdowns.add(e);
                 }
-                else if (element instanceof Input) {
+                else if (element instanceof Input e) {
                     if (!node.isTextual()) wrongValue(i, "input");
-                    ((Input) element).setValue(node.asText());
+                    e.setValue(node.asText());
+                    inputs.add(e);
                 }
-                else if (element instanceof Slider) {
+                else if (element instanceof Slider e) {
                     if (!node.isDouble()) wrongValue(i, "slider");
-                    ((Slider) element).setValue((float) node.asDouble());
+                    e.setValue((float) node.asDouble());
+                    sliders.add(e);
                 }
-                else if (element instanceof StepSlider) {
+                else if (element instanceof StepSlider e) {
                     if (!node.isInt()) wrongValue(i, "step_slider");
-                    ((StepSlider) element).setValue(node.asInt());
+                    e.setValue(node.asInt());
+                    step_sliders.add(e);
                 }
-                else if (element instanceof Toggle) {
+                else if (element instanceof Toggle e) {
                     if (!node.isBoolean()) wrongValue(i, "toggle");
-                    ((Toggle) element).setValue(node.asBoolean());
+                    e.setValue(node.asBoolean());
+                    toggles.add(e);
                 }
 
             }
         }
 
-        public Dropdown.Response getDropdown(int index) {
-            JsonNode node = get(index);
-            if (!node.isInt()) wrongValue(index, "dropdown");
-            return new Dropdown.Response(index, ((Dropdown) form.getElement(index)).getDropdownOption(node.asInt()));
+        public Dropdown getDropdown() {
+            if ((dropdowns.size() == 0)) wrongValue("dropdown");
+            return dropdowns.remove(0);
         }
-        public StepSlider.Response getStepSlider(int index) {
-            JsonNode node = get(index);
-            if (!node.isInt()) wrongValue(index, "step slider");
-            return new StepSlider.Response(index, ((StepSlider) form.getElement(index)).getStep(node.asInt()));
+        public StepSlider getStepSlider() {
+            if ((step_sliders.size() == 0)) wrongValue("step_slider");
+            return step_sliders.remove(0);
         }
-        public String getInput(int index) {
-            JsonNode node = get(index);
-            if (!node.isTextual()) wrongValue(index, "input");
-            return node.asText();
+        public Input getInput(){
+            if ((inputs.size() == 0)) wrongValue("input");
+            return inputs.remove(0);
         }
-        public float getSlider(int index) {
-            JsonNode node = get(index);
-            if (!node.isDouble()) wrongValue(index, "slider");
-            return (float) node.asDouble();
+        public Slider getSlider() {
+            if ((sliders.size() == 0)) wrongValue("slider");
+            return sliders.remove(0);
         }
-        public boolean getToggle(int index) {
-            JsonNode node = get(index);
-            if (!node.isBoolean()) wrongValue(index, "toggle");
-            return node.asBoolean();
+        public Toggle getToggle() {
+            if ((toggles.size() == 0)) wrongValue("toggle");
+            return toggles.remove(0);
         }
         private static void wrongValue(int index, String expected) {throw new IllegalStateException(String.format("Wrong element at index %d expected '%s'", index, expected));}
+        private static void wrongValue(String expected) {throw new IllegalStateException(String.format("No element of type '%s' left", expected));}
     }
     public static class CustomFormBuilder extends FormBuilder<CustomForm, CustomFormBuilder, CustomForm.Response> {
         private final List<Element> elements = new ArrayList<>();
