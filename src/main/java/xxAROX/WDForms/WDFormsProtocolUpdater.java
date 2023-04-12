@@ -3,12 +3,13 @@ package xxAROX.WDForms;
 import dev.waterdog.waterdogpe.network.protocol.updaters.ProtocolCodecUpdater;
 import org.cloudburstmc.protocol.bedrock.codec.BedrockCodec;
 import org.cloudburstmc.protocol.bedrock.codec.BedrockPacketDefinition;
-import org.cloudburstmc.protocol.bedrock.packet.ToastRequestPacket;
+import org.cloudburstmc.protocol.bedrock.packet.ModalFormRequestPacket;
+import org.cloudburstmc.protocol.bedrock.packet.ModalFormResponsePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsRequestPacket;
+import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsResponsePacket;
 
 public class WDFormsProtocolUpdater implements ProtocolCodecUpdater {
-
-    @Override
-    public BedrockCodec.Builder updateCodec(BedrockCodec.Builder builder, BedrockCodec baseCodec) {
+    @Override public BedrockCodec.Builder updateCodec(BedrockCodec.Builder builder, BedrockCodec baseCodec) {
         BedrockPacketDefinition<ModalFormResponsePacket> modalFormResponseDefinition = baseCodec.getPacketDefinition(ModalFormResponsePacket.class);
         BedrockPacketDefinition<ModalFormRequestPacket> modalFormRequestDefinition = baseCodec.getPacketDefinition(ModalFormRequestPacket.class);
         BedrockPacketDefinition<ServerSettingsRequestPacket> serverSettingsRequestDefinition = baseCodec.getPacketDefinition(ServerSettingsRequestPacket.class);
