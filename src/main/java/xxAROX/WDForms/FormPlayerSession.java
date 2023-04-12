@@ -37,6 +37,8 @@ public class FormPlayerSession {
                 WDForms.getInstance().getLogger().debug("Got unexpected response for form " + packet.getFormId());
                 return PacketSignal.UNHANDLED;
             }
+            if (packet.getFormData() == null)
+               packet.setFormData("null");
             try {
                 Form form = forms.get(packet.getFormId());
                 form.handleResponse(player, new JsonMapper().readTree(packet.getFormData().trim()));
