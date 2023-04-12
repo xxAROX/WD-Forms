@@ -5,7 +5,7 @@ import org.cloudburstmc.protocol.bedrock.codec.BedrockCodec;
 import org.cloudburstmc.protocol.bedrock.codec.BedrockPacketDefinition;
 import org.cloudburstmc.protocol.bedrock.packet.ToastRequestPacket;
 
-public class CodecUpdater implements ProtocolCodecUpdater {
+public class WDFormsProtocolUpdater implements ProtocolCodecUpdater {
 
     @Override
     public BedrockCodec.Builder updateCodec(BedrockCodec.Builder builder, BedrockCodec baseCodec) {
