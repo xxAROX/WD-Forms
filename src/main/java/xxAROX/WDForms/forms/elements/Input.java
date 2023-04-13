@@ -16,8 +16,7 @@ import java.util.function.Consumer;
 public class Input extends Element{
     @Getter @Setter protected String placeholder;
     @JsonProperty("default") @Getter @Setter private String defaultText;
-
-    @Setter @JsonIgnore private String value;
+    @JsonIgnore @Getter @Setter private String value;
     @JsonIgnore private Consumer<Input> handle;
     @JsonIgnore private BiConsumer<Input, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){

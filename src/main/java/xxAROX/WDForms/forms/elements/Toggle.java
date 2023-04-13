@@ -37,5 +37,4 @@ public class Toggle extends Element{
     public Toggle(@NonNull String text, Boolean defaultValue) {this(text, defaultValue, (Consumer<Toggle>) null);}
     public Toggle(@NonNull String text) {this(text, false, (Consumer<Toggle>) null);}
     public Boolean hasChanged(){return value == defaultValue;}
-    public Boolean getValue() {return value;}
 }

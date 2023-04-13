@@ -17,8 +17,7 @@ public class Slider extends Element{
     @Getter @Setter protected float max;
     @Getter @Setter protected float step;
     @JsonProperty("default") @Getter @Setter protected Float defaultValue;
-
-    @JsonIgnore @Setter protected Float value;
+    @JsonIgnore @Getter @Setter protected Float value;
     @JsonIgnore protected Consumer<Slider> handle;
     @JsonIgnore private BiConsumer<Slider, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){

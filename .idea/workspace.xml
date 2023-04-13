@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Dropdown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Dropdown.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Slider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Slider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/StepSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/StepSlider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Toggle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Toggle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681306665918</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added getter's &amp; setter's to element class fields -&gt; 2.0.2">
+      <created>1681396731184</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1681396731185</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +274,8 @@
     <MESSAGE value="fixed #6" />
     <MESSAGE value="added missing packet imports" />
     <MESSAGE value="v2.0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2.0.1" />
+    <MESSAGE value="Added getter's &amp; setter's to element class fields -&gt; 2.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added getter's &amp; setter's to element class fields -&gt; 2.0.2" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
