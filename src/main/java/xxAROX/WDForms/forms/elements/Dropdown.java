@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 
 @ToString(exclude = {"handle","playerHandler"})
 public class Dropdown extends Element{
-    protected List<String> options = new ArrayList<>();
+    @Getter @Setter protected List<String> options = new ArrayList<>();
     @JsonProperty("default") @Getter @Setter private int defaultOptionIndex;
     @JsonIgnore @Getter @Setter private Integer value;
     @JsonIgnore private Consumer<Dropdown> handle;

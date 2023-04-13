@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 
 @ToString(exclude = {"handle","playerHandler"})
 public class StepSlider extends Element{
-    private List<String> steps = new ArrayList<>();
+    @Getter @Setter private List<String> steps = new ArrayList<>();
     @JsonProperty("default") @Getter @Setter private Integer defaultStepIndex;
     @JsonIgnore @Getter @Setter private Integer value;
     @JsonIgnore private Consumer<StepSlider> handle;
