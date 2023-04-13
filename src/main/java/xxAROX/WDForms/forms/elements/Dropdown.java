@@ -11,12 +11,11 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@Getter
-@ToString(exclude = {"handle"})
+@ToString(exclude = {"handle","playerHandler"})
 public class Dropdown extends Element{
     protected List<String> options = new ArrayList<>();
-    @JsonProperty("default") private int defaultOptionIndex;
-    @JsonIgnore @Setter private Integer value;
+    @JsonProperty("default") @Getter @Setter private int defaultOptionIndex;
+    @JsonIgnore @Getter @Setter private Integer value;
     @JsonIgnore private Consumer<Dropdown> handle;
     @JsonIgnore private BiConsumer<Dropdown, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){

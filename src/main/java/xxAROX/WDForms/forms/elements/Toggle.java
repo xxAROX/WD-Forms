@@ -3,6 +3,7 @@ package xxAROX.WDForms.forms.elements;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,10 +12,10 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 
-@ToString(exclude = {"handle"})
+@ToString(exclude = {"handle","playerHandler"})
 public class Toggle extends Element{
-    @JsonProperty("default") private Boolean defaultValue = false;
-    @Setter @JsonIgnore private Boolean value = false;
+    @JsonProperty("default") @Getter @Setter private Boolean defaultValue;
+    @JsonIgnore @Getter @Setter private Boolean value = false;
     @JsonIgnore private Consumer<Toggle> handle;
     @JsonIgnore private BiConsumer<Toggle, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){

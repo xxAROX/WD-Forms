@@ -11,13 +11,12 @@ import lombok.ToString;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@Getter
-@ToString(exclude = {"handle"})
+@ToString(exclude = {"handle","playerHandler"})
 public class Slider extends Element{
-    protected float min;
-    protected float max;
-    protected float step;
-    @JsonProperty("default") protected Float defaultValue;
+    @Getter @Setter protected float min;
+    @Getter @Setter protected float max;
+    @Getter @Setter protected float step;
+    @JsonProperty("default") @Getter @Setter protected Float defaultValue;
 
     @JsonIgnore @Setter protected Float value;
     @JsonIgnore protected Consumer<Slider> handle;

@@ -2,7 +2,7 @@ name: "WD-Forms"
 author: "xxAROX"
 description: "WaterdogPE form plugin"
 main: "xxAROX.WDForms.WDForms"
-version: "2.0.1"
+version: "2.0.2"
 website: "https://github.com/xxAROX"
 contributors:
   - "https://github.com/Crasher508"

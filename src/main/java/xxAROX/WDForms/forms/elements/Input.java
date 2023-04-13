@@ -12,11 +12,10 @@ import lombok.ToString;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@Getter
-@ToString(exclude = {"handle"})
+@ToString(exclude = {"handle","playerHandler"})
 public class Input extends Element{
-    protected String placeholder;
-    @JsonProperty("default") private String defaultText;
+    @Getter @Setter protected String placeholder;
+    @JsonProperty("default") @Getter @Setter private String defaultText;
 
     @Setter @JsonIgnore private String value;
     @JsonIgnore private Consumer<Input> handle;

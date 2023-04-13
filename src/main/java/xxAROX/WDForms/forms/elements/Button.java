@@ -4,18 +4,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import org.cloudburstmc.protocol.common.util.Preconditions;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@Getter
-@ToString(exclude = {"onClick"})
+@ToString(exclude = {"onClick","onClickPlayer"})
 public class Button{
     @JsonIgnore private final Element.Type type = Element.Type.BUTTON;
-    @JsonProperty("text") protected String text;
-    @JsonProperty("image") protected Image image;
+    @JsonProperty("text") @Getter @Setter protected String text;
+    @JsonProperty("image") @Getter @Setter protected Image image;
     @JsonIgnore private final Consumer<Button> onClick;
     @JsonIgnore private final BiConsumer<Button, ProxiedPlayer> onClickPlayer;
     public void click(ProxiedPlayer player){

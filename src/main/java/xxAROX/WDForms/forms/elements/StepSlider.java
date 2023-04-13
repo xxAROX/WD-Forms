@@ -11,13 +11,11 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@Getter
-@ToString(exclude = {"handle"})
+@ToString(exclude = {"handle","playerHandler"})
 public class StepSlider extends Element{
     private List<String> steps = new ArrayList<>();
-    @JsonProperty("default") private Integer defaultStepIndex;
-
-    @JsonIgnore @Setter private Integer value;
+    @JsonProperty("default") @Getter @Setter private Integer defaultStepIndex;
+    @JsonIgnore @Getter @Setter private Integer value;
     @JsonIgnore private Consumer<StepSlider> handle;
     @JsonIgnore private BiConsumer<StepSlider, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){
