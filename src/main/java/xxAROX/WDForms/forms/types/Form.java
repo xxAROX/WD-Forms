@@ -51,6 +51,7 @@ abstract public class Form<FormResponse> {
         private final String value;
         @JsonValue public String getJsonName() {return this.value;}
     }
+    @ToString(exclude = {"onClose","onSubmit","onError"})
     public static abstract class FormBuilder<F extends Form<FormResponse>, T extends Form.FormBuilder<F, T, FormResponse>, FormResponse> {
         protected String title = "";
 

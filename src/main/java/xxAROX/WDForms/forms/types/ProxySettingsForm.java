@@ -19,17 +19,14 @@ public class ProxySettingsForm extends CustomForm{
         super(title, elements, onSubmit, onClose, onError);
         this.image = image;
     }
-
-
-
-
+    @ToString
     public static class ProxySettingsFormBuilder extends CustomFormBuilder {
         private Image image = null;
         public ProxySettingsFormBuilder image(@Nullable Image image){
             this.image = image;
             return self();
         }
-        @Override public CustomForm build() {return new ProxySettingsForm(image, title, Collections.unmodifiableList(elements), onSubmit, onClose, onError);}
+        @Override public ProxySettingsForm build() {return new ProxySettingsForm(image, title, Collections.unmodifiableList(elements), onSubmit, onClose, onError);}
         @Override protected ProxySettingsForm.ProxySettingsFormBuilder self() {
             return this;
         }

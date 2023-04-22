@@ -32,6 +32,7 @@ public class ModalForm extends Form<Boolean>{
     }
 
 
+    @ToString
     public static class ModalFormBuilder extends FormBuilder<ModalForm, ModalFormBuilder, Boolean> {
         private String content = "";
         private String trueButton = "true";

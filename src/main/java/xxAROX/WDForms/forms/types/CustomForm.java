@@ -122,6 +122,7 @@ public class CustomForm extends Form<CustomForm.Response>{
         private static void wrongValue(int index, String expected) {throw new IllegalStateException(String.format("Wrong element at index %d expected '%s'", index, expected));}
         private static void wrongValue(String expected) {throw new IllegalStateException(String.format("No element of type '%s' left", expected));}
     }
+    @ToString
     public static class CustomFormBuilder extends FormBuilder<CustomForm, CustomFormBuilder, CustomForm.Response> {
         protected final List<Element> elements = new ArrayList<>();
 
