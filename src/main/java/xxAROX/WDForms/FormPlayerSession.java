@@ -7,11 +7,15 @@ import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import lombok.Getter;
 import org.cloudburstmc.protocol.bedrock.packet.ModalFormRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.ModalFormResponsePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsResponsePacket;
 import org.cloudburstmc.protocol.common.PacketSignal;
 import xxAROX.WDForms.event.FormResponseEvent;
 import xxAROX.WDForms.event.FormSendEvent;
+import xxAROX.WDForms.event.ProxySettingsResponseEvent;
+import xxAROX.WDForms.event.ProxySettingsSendEvent;
 import xxAROX.WDForms.forms.FormValidationError;
 import xxAROX.WDForms.forms.types.Form;
+import xxAROX.WDForms.forms.types.ProxySettingsForm;
 
 import java.util.HashMap;
 
@@ -52,6 +56,32 @@ public class FormPlayerSession {
         return PacketSignal.HANDLED;
     }
 
+    /**
+     * @internal
+     */
+    public PacketSignal response(ServerSettingsResponsePacket packet){
+        ProxySettingsResponseEvent event = new ProxySettingsResponseEvent(player, packet);
+        ProxyServer.getInstance().getEventManager().callEvent(event);
+        if (!event.isCancelled()) {
+            if (!forms.containsKey(packet.getFormId())) {
+                WDForms.getInstance().getLogger().debug("Got unexpected response for form " + packet.getFormId());
+                return PacketSignal.UNHANDLED;
+            }
+            if (packet.getFormData() == null)
+               packet.setFormData("null");
+            try {
+                Form form = forms.get(packet.getFormId());
+                if (form instanceof ProxySettingsForm) form.handleResponse(player, new JsonMapper().readTree(packet.getFormData().trim()));
+            } catch (FormValidationError | JsonProcessingException error) {
+                WDForms.getInstance().getLogger().error("Failed to validate form " + forms.getClass().getSimpleName() + ": " + error.getMessage());
+                WDForms.getInstance().getLogger().error(error);
+            } finally {
+                forms.remove(packet.getFormId());
+            }
+        }
+        return PacketSignal.HANDLED;
+    }
+
     public void sendForm(Form form) {
         int formId = nextFormId();
         String formData = null;
@@ -62,13 +92,23 @@ public class FormPlayerSession {
         }
         if (formData == null) return;
         forms.put(formId, form);
-        ModalFormRequestPacket formRequestPacket = new ModalFormRequestPacket();
-        formRequestPacket.setFormId(formId);
-        formRequestPacket.setFormData(formData);
-        
-        FormSendEvent event = new FormSendEvent(player, formRequestPacket);
-        ProxyServer.getInstance().getEventManager().callEvent(event);
-        if (!event.isCancelled()) player.sendPacket(formRequestPacket);
+        if (form instanceof ProxySettingsForm) {
+            ServerSettingsResponsePacket serverSettingsResponsePacket = new ServerSettingsResponsePacket();
+            serverSettingsResponsePacket.setFormId(formId);
+            serverSettingsResponsePacket.setFormData(formData);
+
+            ProxySettingsSendEvent event = new ProxySettingsSendEvent(player, serverSettingsResponsePacket);
+            ProxyServer.getInstance().getEventManager().callEvent(event);
+            if (!event.isCancelled()) player.sendPacket(serverSettingsResponsePacket);
+        } else {
+            ModalFormRequestPacket formRequestPacket = new ModalFormRequestPacket();
+            formRequestPacket.setFormId(formId);
+            formRequestPacket.setFormData(formData);
+
+            FormSendEvent event = new FormSendEvent(player, formRequestPacket);
+            ProxyServer.getInstance().getEventManager().callEvent(event);
+            if (!event.isCancelled()) player.sendPacket(formRequestPacket);
+        }
     }
 
     public Integer nextFormId(){return --formIdCounter;}

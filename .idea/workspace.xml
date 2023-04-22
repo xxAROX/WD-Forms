@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="Made all element-fields to protected and added getter/setter for handlers">
+    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/event/ProxySettingsResponseEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/event/ProxySettingsSendEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/ProxySettingsForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Dropdown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Dropdown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Slider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Slider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/StepSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/StepSlider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Toggle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Toggle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/FormPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/FormPacketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/FormPlayerSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/FormPlayerSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/WDForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/WDForms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/Form.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +71,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kfeig\Documents\Development\xxAROX\.customers\WD-forms\src\main\resources" />
       <recent name="C:\Users\kfeig\Documents\Development\xxAROX\.customers\WD-forms\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="xxAROX.WDForms.event" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -258,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681398503910</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Made all element-fields to protected and added getter/setter for handlers">
+      <created>1682193279452</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1682193279452</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,7 +309,8 @@
     <MESSAGE value="Added getter's &amp; setter's to element class fields -&gt; 2.0.2" />
     <MESSAGE value="whoops" />
     <MESSAGE value="double whoops" />
-    <option name="LAST_COMMIT_MESSAGE" value="double whoops" />
+    <MESSAGE value="Made all element-fields to protected and added getter/setter for handlers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made all element-fields to protected and added getter/setter for handlers" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

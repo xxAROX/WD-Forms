@@ -15,18 +15,18 @@ import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@Getter
 @ToString
 public class CustomForm extends Form<CustomForm.Response>{
-    protected Image image;
-    @JsonProperty("content") protected List<Element> elements;
+    @JsonProperty("content") @Getter protected List<Element> elements;
 
+    @Deprecated
     public CustomForm(Image image, String title, List<Element> elements, Consumer<Response> onSubmit, Runnable onClose, Consumer<Throwable> onError) {
         super(Type.CUSTOM, title, onSubmit, onClose, onError);
-        this.image = image;
         this.elements = elements;
     }
-    public CustomForm(String title, List<Element> elements, Consumer<Response> onSubmit, Runnable onClose, Consumer<Throwable> onError) {this(null, title, elements, onSubmit, onClose, onError);}
+    public CustomForm(String title, List<Element> elements, Consumer<Response> onSubmit, Runnable onClose, Consumer<Throwable> onError) {
+        this(null, title, elements, onSubmit, onClose, onError);
+    }
     public Element getElement(int index) {return elements.get(index);}
 
     @Override public void handleResponse(ProxiedPlayer player, JsonNode node) {
@@ -123,14 +123,9 @@ public class CustomForm extends Form<CustomForm.Response>{
         private static void wrongValue(String expected) {throw new IllegalStateException(String.format("No element of type '%s' left", expected));}
     }
     public static class CustomFormBuilder extends FormBuilder<CustomForm, CustomFormBuilder, CustomForm.Response> {
-        private final List<Element> elements = new ArrayList<>();
-        private Image image = null;
-        
+        protected final List<Element> elements = new ArrayList<>();
+
         public CustomFormBuilder label(@NonNull String text) {return element(new Label(text));}
-        public CustomFormBuilder image(@NonNull Image image) {
-            this.image = image;
-            return this;
-        }
 
         public CustomFormBuilder dropdown(@NonNull String text, @NonNull List<String> options) {
             return element(new Dropdown(text, options));
@@ -302,7 +297,7 @@ public class CustomForm extends Form<CustomForm.Response>{
             return this;
         }
 
-        @Override public CustomForm build() {return new CustomForm(image, title, Collections.unmodifiableList(elements), onSubmit, onClose, onError);}
+        @Override public CustomForm build() {return new CustomForm(title, Collections.unmodifiableList(elements), onSubmit, onClose, onError);}
         @Override protected CustomFormBuilder self() {
             return this;
         }

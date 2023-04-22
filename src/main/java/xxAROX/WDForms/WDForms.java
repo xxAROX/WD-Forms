@@ -4,13 +4,18 @@ import dev.waterdog.waterdogpe.event.defaults.PlayerLoginEvent;
 import dev.waterdog.waterdogpe.network.protocol.ProtocolCodecs;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import dev.waterdog.waterdogpe.plugin.Plugin;
+import lombok.Getter;
+import xxAROX.WDForms.forms.types.ProxySettingsForm;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class WDForms extends Plugin {
     private static WDForms instance;
     public static WDForms getInstance() {return instance;}
     final private static HashMap<ProxiedPlayer, FormPlayerSession> sessions = new HashMap<>();
+    @Getter final private static List<ProxySettingsForm> globalSettings = new ArrayList<>();
 
 
     @Override public void onStartup() {

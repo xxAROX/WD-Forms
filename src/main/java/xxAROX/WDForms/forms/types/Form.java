@@ -42,6 +42,7 @@ abstract public class Form<FormResponse> {
     public static MenuForm.MenuFormBuilder menu(){return new MenuForm.MenuFormBuilder();}
     public static CustomForm.CustomFormBuilder custom(){return new CustomForm.CustomFormBuilder();}
     public static ModalForm.ModalFormBuilder modal(){return new ModalForm.ModalFormBuilder();}
+    public static ProxySettingsForm.ProxySettingsFormBuilder settings(){return new ProxySettingsForm.ProxySettingsFormBuilder();}
 
     @RequiredArgsConstructor public enum Type {
         MODAL("modal"),
