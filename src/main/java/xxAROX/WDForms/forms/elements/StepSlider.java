@@ -13,11 +13,11 @@ import java.util.function.Consumer;
 
 @ToString(exclude = {"handle","playerHandler"})
 public class StepSlider extends Element{
-    @Getter @Setter private List<String> steps = new ArrayList<>();
-    @JsonProperty("default") @Getter @Setter private Integer defaultStepIndex;
-    @JsonIgnore @Getter @Setter private Integer value;
-    @JsonIgnore private Consumer<StepSlider> handle;
-    @JsonIgnore private BiConsumer<StepSlider, ProxiedPlayer> playerHandler;
+    @Getter @Setter protected List<String> steps = new ArrayList<>();
+    @JsonProperty("default") @Getter @Setter protected Integer defaultStepIndex;
+    @JsonIgnore @Getter @Setter protected Integer value;
+    @JsonIgnore @Getter @Setter protected Consumer<StepSlider> handle;
+    @JsonIgnore @Getter @Setter protected BiConsumer<StepSlider, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){
         if (handle != null) handle.accept(this);
         if (playerHandler != null) playerHandler.accept(this, player);

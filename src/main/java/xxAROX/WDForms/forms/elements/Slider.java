@@ -18,8 +18,8 @@ public class Slider extends Element{
     @Getter @Setter protected float step;
     @JsonProperty("default") @Getter @Setter protected Float defaultValue;
     @JsonIgnore @Getter @Setter protected Float value;
-    @JsonIgnore protected Consumer<Slider> handle;
-    @JsonIgnore private BiConsumer<Slider, ProxiedPlayer> playerHandler;
+    @JsonIgnore @Getter @Setter protected Consumer<Slider> handle;
+    @JsonIgnore @Getter @Setter protected BiConsumer<Slider, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){
         if (handle != null) handle.accept(this);
         if (playerHandler != null) playerHandler.accept(this, player);

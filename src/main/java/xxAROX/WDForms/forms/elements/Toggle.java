@@ -14,10 +14,10 @@ import java.util.function.Consumer;
 
 @ToString(exclude = {"handle","playerHandler"})
 public class Toggle extends Element{
-    @JsonProperty("default") @Getter @Setter private Boolean defaultValue;
-    @JsonIgnore @Getter @Setter private Boolean value = false;
-    @JsonIgnore private Consumer<Toggle> handle;
-    @JsonIgnore private BiConsumer<Toggle, ProxiedPlayer> playerHandler;
+    @JsonProperty("default") @Getter @Setter protected Boolean defaultValue;
+    @JsonIgnore @Getter @Setter protected Boolean value = false;
+    @JsonIgnore @Getter @Setter protected Consumer<Toggle> handle;
+    @JsonIgnore @Getter @Setter protected BiConsumer<Toggle, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){
         if (handle != null) handle.accept(this);
         if (playerHandler != null) playerHandler.accept(this, player);

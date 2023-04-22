@@ -13,7 +13,7 @@ import java.io.IOException;
 @Getter
 @ToString
 @JsonSerialize(using = Image.ImageSerializer.class)
-public class Image {
+public final class Image {
     @JsonProperty("data") private final String data;
     @JsonProperty("type") private final Type type;
 

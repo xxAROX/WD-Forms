@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import lombok.ToString;
 import org.cloudburstmc.protocol.common.util.Preconditions;
 
+@ToString
 abstract public class Element {
-    @JsonProperty("type") @Getter private final Type type;
-    @JsonProperty("text") @Getter @Setter private String text;
+    @JsonProperty("type") @Getter protected final Type type;
+    @JsonProperty("text") @Getter @Setter protected String text;
 
     public Element(@NonNull Type type, @NonNull String text){
         Preconditions.checkNotNull(type, "The provided type can not be null");

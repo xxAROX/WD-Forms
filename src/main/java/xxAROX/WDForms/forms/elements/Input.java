@@ -15,10 +15,10 @@ import java.util.function.Consumer;
 @ToString(exclude = {"handle","playerHandler"})
 public class Input extends Element{
     @Getter @Setter protected String placeholder;
-    @JsonProperty("default") @Getter @Setter private String defaultText;
-    @JsonIgnore @Getter @Setter private String value;
-    @JsonIgnore private Consumer<Input> handle;
-    @JsonIgnore private BiConsumer<Input, ProxiedPlayer> playerHandler;
+    @JsonProperty("default") @Getter @Setter protected String defaultText;
+    @JsonIgnore @Getter @Setter protected String value;
+    @JsonIgnore @Getter @Setter protected Consumer<Input> handle;
+    @JsonIgnore @Getter @Setter protected BiConsumer<Input, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){
         if (handle != null) handle.accept(this);
         if (playerHandler != null) playerHandler.accept(this, player);

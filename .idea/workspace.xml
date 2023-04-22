@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
+    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="Made all element-fields to protected and added getter/setter for handlers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Button.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Dropdown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Dropdown.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Slider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Slider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/StepSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/StepSlider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Toggle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Toggle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +35,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -243,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681397946741</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="double whoops">
+      <created>1681398503910</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1681398503910</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,7 +299,8 @@
     <MESSAGE value="v2.0.1" />
     <MESSAGE value="Added getter's &amp; setter's to element class fields -&gt; 2.0.2" />
     <MESSAGE value="whoops" />
-    <option name="LAST_COMMIT_MESSAGE" value="whoops" />
+    <MESSAGE value="double whoops" />
+    <option name="LAST_COMMIT_MESSAGE" value="double whoops" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

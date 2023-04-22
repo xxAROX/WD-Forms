@@ -14,10 +14,10 @@ import java.util.function.Consumer;
 @ToString(exclude = {"handle","playerHandler"})
 public class Dropdown extends Element{
     @Getter @Setter protected List<String> options = new ArrayList<>();
-    @JsonProperty("default") @Getter @Setter private int defaultOptionIndex;
-    @JsonIgnore @Getter @Setter private Integer value;
-    @JsonIgnore private Consumer<Dropdown> handle;
-    @JsonIgnore private BiConsumer<Dropdown, ProxiedPlayer> playerHandler;
+    @JsonProperty("default") @Getter @Setter protected int defaultOptionIndex;
+    @JsonIgnore @Getter @Setter protected Integer value;
+    @JsonIgnore @Getter @Setter protected Consumer<Dropdown> handle;
+    @JsonIgnore @Getter @Setter protected BiConsumer<Dropdown, ProxiedPlayer> playerHandler;
     public void handle(ProxiedPlayer player){
         if (handle != null) handle.accept(this);
         if (playerHandler != null) playerHandler.accept(this, player);

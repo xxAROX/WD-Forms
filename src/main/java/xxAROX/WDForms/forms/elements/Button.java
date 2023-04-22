@@ -16,8 +16,8 @@ public class Button{
     @JsonIgnore private final Element.Type type = Element.Type.BUTTON;
     @JsonProperty("text") @Getter @Setter protected String text;
     @JsonProperty("image") @Getter @Setter protected Image image;
-    @JsonIgnore private final Consumer<Button> onClick;
-    @JsonIgnore private final BiConsumer<Button, ProxiedPlayer> onClickPlayer;
+    @JsonIgnore @Getter @Setter protected Consumer<Button> onClick;
+    @JsonIgnore @Getter @Setter protected BiConsumer<Button, ProxiedPlayer> onClickPlayer;
     public void click(ProxiedPlayer player){
         if (onClick != null) onClick.accept(this);
         if (onClickPlayer != null) onClickPlayer.accept(this, player);
