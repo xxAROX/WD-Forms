@@ -16,7 +16,7 @@ public record FormPacketHandler(FormPlayerSession session) implements PluginPack
             } else if (packet instanceof ServerSettingsResponsePacket serverSettingsResponsePacket) {
                return serverSettingsResponsePacket.getFormId() < 0 ? session.response(serverSettingsResponsePacket) : PacketSignal.UNHANDLED;
             } else if (packet instanceof ServerSettingsRequestPacket) {
-                WDForms.getGlobalSettings().forEach(settingsForm -> settingsForm.sendTo(session.getPlayer()));
+                WDForms.getGlobalSettings().forEach(proxiedPlayerProxySettingsFormFunction -> proxiedPlayerProxySettingsFormFunction.apply(session.getPlayer()).build().sendTo(session.getPlayer()));
             }
         }
         return PacketSignal.UNHANDLED;

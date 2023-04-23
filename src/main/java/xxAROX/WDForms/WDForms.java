@@ -10,12 +10,13 @@ import xxAROX.WDForms.forms.types.ProxySettingsForm;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.function.Function;
 
 public class WDForms extends Plugin {
     private static WDForms instance;
     public static WDForms getInstance() {return instance;}
     final private static HashMap<ProxiedPlayer, FormPlayerSession> sessions = new HashMap<>();
-    @Getter final private static List<ProxySettingsForm> globalSettings = new ArrayList<>();
+    @Getter final private static List<Function<ProxiedPlayer, ProxySettingsForm.ProxySettingsFormBuilder>> globalSettings = new ArrayList<>();
 
 
     @Override public void onStartup() {
