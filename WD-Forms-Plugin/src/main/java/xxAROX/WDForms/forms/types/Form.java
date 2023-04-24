@@ -42,6 +42,7 @@ abstract public class Form<FormResponse> {
     public static MenuForm.MenuFormBuilder menu(){return new MenuForm.MenuFormBuilder();}
     public static CustomForm.CustomFormBuilder custom(){return new CustomForm.CustomFormBuilder();}
     public static ModalForm.ModalFormBuilder modal(){return new ModalForm.ModalFormBuilder();}
+    public static ProxySettingsForm.ProxySettingsFormBuilder settings(){return new ProxySettingsForm.ProxySettingsFormBuilder();}
 
     @RequiredArgsConstructor public enum Type {
         MODAL("modal"),
@@ -50,6 +51,7 @@ abstract public class Form<FormResponse> {
         private final String value;
         @JsonValue public String getJsonName() {return this.value;}
     }
+    @ToString(exclude = {"onClose","onSubmit","onError"})
     public static abstract class FormBuilder<F extends Form<FormResponse>, T extends Form.FormBuilder<F, T, FormResponse>, FormResponse> {
         protected String title = "";
 

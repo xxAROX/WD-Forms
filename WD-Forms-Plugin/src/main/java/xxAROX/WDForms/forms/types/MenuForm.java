@@ -64,6 +64,7 @@ public class MenuForm extends Form<MenuForm.Response> {
                     '}';
         }
     }
+    @ToString
     public static class MenuFormBuilder extends FormBuilder<MenuForm, MenuFormBuilder, MenuForm.Response> {
         private String content = "";
         private final List<Button> buttons = new ArrayList<>();

@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="WD-Forms" />
+        <module name="WD-Forms-Plugin" />
+        <module name="WD-Forms-Test" />
       </profile>
     </annotationProcessing>
   </component>
