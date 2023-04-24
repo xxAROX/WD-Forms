@@ -1,0 +1,6 @@
+name: "WD-Forms-Test"
+version: "1.0.0"
+main: "xxAROX.WDFormsTest.WDFormsTestPlugin"
+author: "xxAROX"
+description: "Plugin to test WD-Forms"
+website: "https://github.com/xxAROX/WD-Forms"
