@@ -1,5 +1,5 @@
 proxy-settings:
-  send-interval: 20 # Send the settings packet X times to the player to workaround the "Settings not appear" -bug
+  send-interval: 20 # Wait X intervals before send the settings packet X times to the player to workaround the "Settings not appear" -bug
 
 menu:
   image-fix-interval: 5
