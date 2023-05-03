@@ -10,6 +10,7 @@ import lombok.ToString;
 import org.cloudburstmc.protocol.common.util.Preconditions;
 import xxAROX.WDForms.forms.FormValidationError;
 import xxAROX.WDForms.forms.elements.*;
+import xxAROX.WDForms.utils.autoback.AutoBack;
 
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -19,38 +20,41 @@ import java.util.function.Consumer;
 public class CustomForm extends Form<CustomForm.Response>{
     @JsonProperty("content") @Getter protected List<Element> elements;
 
-    @Deprecated
+    @Deprecated(forRemoval = true)
     public CustomForm(Image image, String title, List<Element> elements, Consumer<Response> onSubmit, Runnable onClose, Consumer<Throwable> onError) {
         super(Type.CUSTOM, title, onSubmit, onClose, onError);
+        this.elements = elements;
+    }
+    public CustomForm(Image image, String title, List<Element> elements, Consumer<Response> onSubmit, Consumer<ProxiedPlayer> onClosePlayer, Consumer<Throwable> onError) {
+        super(Type.CUSTOM, title, onSubmit, onClosePlayer, onError);
         this.elements = elements;
     }
     public CustomForm(String title, List<Element> elements, Consumer<Response> onSubmit, Runnable onClose, Consumer<Throwable> onError) {
         this(null, title, elements, onSubmit, onClose, onError);
     }
+    public CustomForm(String title, List<Element> elements, Consumer<Response> onSubmit, Consumer<ProxiedPlayer> onClosePlayer, Consumer<Throwable> onError) {
+        this(null, title, elements, onSubmit, onClosePlayer, onError);
+    }
     public Element getElement(int index) {return elements.get(index);}
 
     @Override public void handleResponse(ProxiedPlayer player, JsonNode node) {
         if (node.isNull()) {
-            close();
+            close(player);
             return;
         }
         if (!node.isArray()) {
             error(new FormValidationError("Expected array, got " + node));
             return;
         }
-        submit(new Response(this, node, player));
-    }
-
-    @Override
-    public void submit(Response response) {
+        AutoBack.cacheForm(player, this);
         for (Element element : elements) {
-            if (element instanceof Dropdown e) e.handle(response.getPlayer());
-            else if (element instanceof Input e) e.handle(response.getPlayer());
-            else if (element instanceof Slider e) e.handle(response.getPlayer());
-            else if (element instanceof StepSlider e) e.handle(response.getPlayer());
-            else if (element instanceof Toggle e) e.handle(response.getPlayer());
+            if (element instanceof Dropdown e) e.handle(player);
+            else if (element instanceof Input e) e.handle(player);
+            else if (element instanceof Slider e) e.handle(player);
+            else if (element instanceof StepSlider e) e.handle(player);
+            else if (element instanceof Toggle e) e.handle(player);
         }
-        super.submit(response);
+        submit(player, new Response(this, node, player));
     }
 
     @ToString

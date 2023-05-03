@@ -16,6 +16,7 @@ import xxAROX.WDForms.event.FormSendEvent;
 import xxAROX.WDForms.forms.FormValidationError;
 import xxAROX.WDForms.forms.types.Form;
 import xxAROX.WDForms.forms.types.ProxySettingsForm;
+import xxAROX.WDForms.utils.autoback.AutoBack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +29,7 @@ public class FormPlayerSession {
     @Setter private long entityRuntimeId = -1;
 
     private int formIdCounter = 0;
-    private final HashMap<Integer, Form> forms = new HashMap<>();
+    @Getter private final HashMap<Integer, Form<?>> forms = new HashMap<>();
     private Integer settings_ticker = 0;
 
     public FormPlayerSession(ProxiedPlayer player){
@@ -69,7 +70,7 @@ public class FormPlayerSession {
             if (packet.getFormData() == null)
                packet.setFormData("null");
             try {
-                Form form = forms.get(packet.getFormId());
+                Form<?> form = forms.get(packet.getFormId());
                 form.handleResponse(player, new JsonMapper().readTree(packet.getFormData().trim()));
             } catch (FormValidationError | JsonProcessingException error) {
                 WDForms.getInstance().getLogger().error("Failed to validate form " + forms.getClass().getSimpleName() + ": " + error.getMessage());
@@ -92,7 +93,7 @@ public class FormPlayerSession {
         if (packet.getFormData() == null)
            packet.setFormData("null");
         try {
-            Form form = forms.get(packet.getFormId());
+            Form<?> form = forms.get(packet.getFormId());
             if (form instanceof ProxySettingsForm) form.handleResponse(player, new JsonMapper().readTree(packet.getFormData().trim()));
         } catch (FormValidationError | JsonProcessingException error) {
             WDForms.getInstance().getLogger().error("Failed to validate form " + forms.getClass().getSimpleName() + ": " + error.getMessage());
@@ -103,7 +104,7 @@ public class FormPlayerSession {
         return PacketSignal.HANDLED;
     }
 
-    public void sendForm(Form form) {
+    public void sendForm(Form<?> form) {
         int formId = nextFormId();
         String formData = null;
         try {
@@ -126,6 +127,7 @@ public class FormPlayerSession {
             FormSendEvent event = new FormSendEvent(player, formRequestPacket);
             ProxyServer.getInstance().getEventManager().callEvent(event);
             if (!event.isCancelled()) {
+                AutoBack.handleForm(this, formId, form);
                 //if (form instanceof MenuForm) handleImageFix_request(player);
                 player.sendPacket(formRequestPacket);
             }
