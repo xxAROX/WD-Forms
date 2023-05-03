@@ -4,45 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="Server">
-      <change afterPath="$PROJECT_DIR$/WD-Forms-Plugin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/event/SettingsFormSendEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/resources/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WD-Forms-Test/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WD-Forms-Test/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/WDFormsTestPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/command/TestFormCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WD-Forms-Test/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/utils/autoback/AutoBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/utils/autoback/AutoBackEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/utils/autoback/buttons/BackButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/utils/autoback/buttons/CloseButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/FormPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPacketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/FormPlayerSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPlayerSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/WDForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/WDForms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/WDFormsProtocolUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/WDFormsProtocolUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/event/FormResponseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/event/FormResponseEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/event/FormSendEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/event/FormSendEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/event/ProxySettingsResponseEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/event/ProxySettingsSendEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/FormValidationError.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/FormValidationError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Dropdown.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/Dropdown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Slider.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/Slider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/StepSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/StepSlider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/elements/Toggle.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/elements/Toggle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/MenuForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/ModalForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/ModalForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/ProxySettingsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/ProxySettingsForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xxAROX/WDForms/forms/types/defaults/AgreeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/defaults/AgreeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPlayerSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPlayerSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/Form.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/MenuForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/ModalForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/ModalForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/WDFormsTestPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/WDFormsTestPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/command/TestFormCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/command/TestFormCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +80,7 @@
       <recent name="C:\Users\kfeig\Documents\Development\xxAROX\.customers\WD-forms\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="xxAROX.WDForms.utils.autoback.buttons" />
       <recent name="xxAROX.WDForms.event" />
     </key>
   </component>
@@ -320,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682213384140</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Changes:&#10;- Implemented ProxySettingsForm, that works lol.&#10;- Restructured to a module plugin thing&#10;- Added test plugin module">
+      <created>1682367148206</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1682367148206</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,7 +321,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="WaterdogPE v2" />
     <MESSAGE value="Added form image fix (tests needed)" />
     <MESSAGE value="made FormPacketHandler to record" />
     <MESSAGE value="done!" />
@@ -363,7 +345,8 @@
     <MESSAGE value="Made all element-fields to protected and added getter/setter for handlers" />
     <MESSAGE value="Added base for ProxySettingsForm" />
     <MESSAGE value="FIxed" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIxed" />
+    <MESSAGE value="Changes:&#10;- Implemented ProxySettingsForm, that works lol.&#10;- Restructured to a module plugin thing&#10;- Added test plugin module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- Implemented ProxySettingsForm, that works lol.&#10;- Restructured to a module plugin thing&#10;- Added test plugin module" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
