@@ -16,7 +16,6 @@ import xxAROX.WDForms.event.FormSendEvent;
 import xxAROX.WDForms.forms.FormValidationError;
 import xxAROX.WDForms.forms.types.Form;
 import xxAROX.WDForms.forms.types.ProxySettingsForm;
-import xxAROX.WDForms.utils.autoback.AutoBack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -127,7 +126,6 @@ public class FormPlayerSession {
             FormSendEvent event = new FormSendEvent(player, formRequestPacket);
             ProxyServer.getInstance().getEventManager().callEvent(event);
             if (!event.isCancelled()) {
-                AutoBack.handleForm(this, formId, form);
                 //if (form instanceof MenuForm) handleImageFix_request(player);
                 player.sendPacket(formRequestPacket);
             }

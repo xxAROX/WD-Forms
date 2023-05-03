@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="" />
+    <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="Removed all autoback infected code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPlayerSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPlayerSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/CustomForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/Form.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/MenuForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/ModalForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/ModalForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/utils/autoback/AutoBack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/utils/autoback/AutoBackEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/utils/autoback/buttons/BackButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/utils/autoback/buttons/CloseButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/WDFormsTestPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/WDFormsTestPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/command/TestFormCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Test/src/main/java/xxAROX/WDFormsTest/command/TestFormCommand.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +38,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -36,9 +50,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPlayerSession.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/Form.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPacketHandler.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/WDForms.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPacketHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/forms/types/Form.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2NxgkaPZ8cIkgeBRZN5AimmUHZc" />
   <component name="ProjectLevelVcsManager">

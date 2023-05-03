@@ -6,19 +6,21 @@ import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import jline.internal.Nullable;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.cloudburstmc.protocol.common.util.Preconditions;
 import xxAROX.WDForms.forms.FormValidationError;
 import xxAROX.WDForms.forms.elements.*;
-import xxAROX.WDForms.utils.autoback.AutoBack;
 
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+@Getter @Setter @Accessors(chain = true)
 @ToString
 public class CustomForm extends Form<CustomForm.Response>{
-    @JsonProperty("content") @Getter protected List<Element> elements;
+    @JsonProperty("content") protected List<Element> elements;
 
     @Deprecated(forRemoval = true)
     public CustomForm(Image image, String title, List<Element> elements, Consumer<Response> onSubmit, Runnable onClose, Consumer<Throwable> onError) {
@@ -46,7 +48,6 @@ public class CustomForm extends Form<CustomForm.Response>{
             error(new FormValidationError("Expected array, got " + node));
             return;
         }
-        AutoBack.cacheForm(player, this);
         for (Element element : elements) {
             if (element instanceof Dropdown e) e.handle(player);
             else if (element instanceof Input e) e.handle(player);

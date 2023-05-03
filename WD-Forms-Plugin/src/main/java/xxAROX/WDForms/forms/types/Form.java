@@ -17,10 +17,14 @@ import java.util.function.Consumer;
 abstract public class Form<FormResponse> {
     private final Type type;
     private String title;
-    @JsonIgnore private Consumer<FormResponse> onSubmit = null;
+    @JsonIgnore private Consumer<FormResponse> onSubmit;
     @JsonIgnore private Runnable onClose = null;
     @JsonIgnore private Consumer<ProxiedPlayer> onClosePlayer = null;
-    @JsonIgnore private Consumer<Throwable> onError = null;
+    @JsonIgnore private Consumer<Throwable> onError;
+
+    public static Consumer<ProxiedPlayer> UNCLOSEABLE(){
+        return player -> WDForms.getSession(player).getForms().values().stream().toList().get(0).sendTo(player);
+    }
 
     public Form(@NonNull Type type, @NonNull String title, @Nullable Consumer<FormResponse> onSubmit, @Nullable Runnable onClose, @Nullable Consumer<Throwable> onError){
         this.type = type;

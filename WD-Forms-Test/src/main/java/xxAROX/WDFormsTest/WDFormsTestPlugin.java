@@ -6,14 +6,12 @@ import org.apache.commons.lang3.RandomUtils;
 import xxAROX.WDForms.WDForms;
 import xxAROX.WDForms.forms.elements.Image;
 import xxAROX.WDForms.forms.types.ProxySettingsForm;
-import xxAROX.WDForms.utils.autoback.AutoBack;
 import xxAROX.WDFormsTest.command.TestFormCommand;
 
 public class WDFormsTestPlugin extends Plugin {
     @Override public void onEnable() {
         getProxy().getCommandMap().registerCommand(new TestFormCommand());
         WDForms.getGlobalSettings().add(WDFormsTestPlugin::settings);
-        AutoBack.setEnabled(true);
     }
     public static ProxySettingsForm.ProxySettingsFormBuilder settings(ProxiedPlayer player){
         return (ProxySettingsForm.ProxySettingsFormBuilder) ProxySettingsForm.settings()

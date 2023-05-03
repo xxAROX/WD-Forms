@@ -5,12 +5,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 import java.util.function.Consumer;
 
 
-@Getter
+@Getter @Setter @Accessors(chain = true)
 @ToString
 public class ModalForm extends Form<Boolean>{
     protected String content;

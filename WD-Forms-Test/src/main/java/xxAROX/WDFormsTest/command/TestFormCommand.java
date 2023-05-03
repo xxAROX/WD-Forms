@@ -10,15 +10,13 @@ import xxAROX.WDForms.forms.elements.Image;
 import xxAROX.WDForms.forms.types.CustomForm;
 import xxAROX.WDForms.forms.types.MenuForm;
 import xxAROX.WDForms.forms.types.ModalForm;
-import xxAROX.WDForms.utils.autoback.AutoBack;
-import xxAROX.WDForms.utils.autoback.buttons.BackButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestFormCommand extends Command {
     public TestFormCommand() {
-        super("testwdforms", CommandSettings.builder().setUsageMessage("/testwdforms <autoback|menu|custom|modal>").setDescription("To test WD-Forms plugin functionality").build());
+        super("testwdforms", CommandSettings.builder().setUsageMessage("/testwdforms <menu|custom|modal>").setDescription("To test WD-Forms plugin functionality").build());
     }
     @Override public boolean onExecute(CommandSender commandSender, String aliasUsed, String[] strings) {
         if (!(commandSender instanceof ProxiedPlayer player)) {
@@ -28,35 +26,17 @@ public class TestFormCommand extends Command {
         if (strings.length == 0) return false;
         switch (strings[0]) {
             default -> {return false;}
-            case "autoback" -> autoback(player);
             case "menu" -> menu(player);
             case "custom" -> custom(player);
             case "modal" -> modal(player);
         }
         return true;
     }
-    public static void autoback(ProxiedPlayer player){
-        if (!AutoBack.isEnabled()) {
-            player.sendMessage("Autoback is disabled!");
-            return;
-        }
-        List<Button> buttons = new ArrayList<>();
-        buttons.add(BackButton.DEFAULT);
-        for (int i = 1; i <= 20; i++) buttons.add(new Button("MenuForm.button." + i, button -> autoback(player)));
-        MenuForm.menu()
-                .title("Autoback test")
-                .content("Random number to make this for unique: " + RandomUtils.nextInt(0, 10000000))
-                .buttons(buttons)
-                .onError(throwable -> player.sendMessage("Error in form handler: " + throwable.getMessage()))
-                .build()
-                .sendTo(player)
-        ;
-    }
     public static void menu(ProxiedPlayer player){
         List<Button> buttons = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             int finalI = i;
-            buttons.add(new Button("MenuForm.button." + finalI, Image.create("https://picsum.photos/512"), button -> player.sendMessage("You clicked on button " + finalI)));
+            buttons.add(new Button("MenuForm.button." + finalI, Image.create("https://picsum.photos/64?random="+i), button -> player.sendMessage("You clicked on button " + finalI)));
         }
         MenuForm.menu()
                 .title("MenuForm.title")

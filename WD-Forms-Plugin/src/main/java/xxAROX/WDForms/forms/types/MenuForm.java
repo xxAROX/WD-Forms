@@ -11,7 +11,6 @@ import org.cloudburstmc.protocol.common.util.Preconditions;
 import xxAROX.WDForms.forms.FormValidationError;
 import xxAROX.WDForms.forms.elements.Button;
 import xxAROX.WDForms.forms.elements.Image;
-import xxAROX.WDForms.utils.autoback.AutoBack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +19,8 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@Getter @Setter @Accessors(chain = true) @ToString
+@Getter @Setter @Accessors(chain = true)
+@ToString
 public class MenuForm extends Form<MenuForm.Response> {
     private String content;
     private List<Button> buttons = new ArrayList<>();
@@ -50,7 +50,6 @@ public class MenuForm extends Form<MenuForm.Response> {
             error(new FormValidationError("Button with index '" + node + "' does not exist"));
             return;
         }
-        AutoBack.cacheForm(player, this);
         button.click(player);
         submit(player, new Response(index, button, player));
     }
