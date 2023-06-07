@@ -17,6 +17,11 @@
       <option name="url" value="https://repo.opencollab.dev/maven-snapshots/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="waterdog" />
+      <option name="name" value="waterdog" />
+      <option name="url" value="https://repo.waterdog.dev/main/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
