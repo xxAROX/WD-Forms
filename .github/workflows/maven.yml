@@ -21,9 +21,9 @@ jobs:
     - name: "Get plugin.yml stuff"
       id: metadata
       run: |
-        echo "VERSION=$(php -r 'echo explode("+", explode("-", yaml_parse_file(getcwd() . "/src/main/resources/plugin.yml")["version"])[0])[0];')" >> $GITHUB_OUTPUT
-        echo "FULL_VERSION=$(php -r 'echo yaml_parse_file(getcwd() . "/src/main/resources/plugin.yml")["version"];')" >> $GITHUB_OUTPUT
-        echo "NAME=$(php -r 'echo yaml_parse_file(getcwd() . "/src/main/resources/plugin.yml")["name"];')" >> $GITHUB_OUTPUT
+        echo "VERSION=$(php -r 'echo explode("+", explode("-", yaml_parse_file(getcwd() . "/WD-Forms-Plugin/src/main/resources/plugin.yml")["version"])[0])[0];')" >> $GITHUB_OUTPUT
+        echo "FULL_VERSION=$(php -r 'echo yaml_parse_file(getcwd() . "/WD-Forms-Plugin/src/main/resources/plugin.yml")["version"];')" >> $GITHUB_OUTPUT
+        echo "NAME=$(php -r 'echo yaml_parse_file(getcwd() . "/WD-Forms-Plugin/src/main/resources/plugin.yml")["name"];')" >> $GITHUB_OUTPUT
 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
