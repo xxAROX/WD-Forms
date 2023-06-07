@@ -5,32 +5,51 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.JsonNode;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import jline.internal.Nullable;
+import lombok.*;
+import lombok.experimental.Accessors;
 import xxAROX.WDForms.WDForms;
 
 import java.util.function.Consumer;
 
-@RequiredArgsConstructor
-@Getter
-@ToString(exclude = {"onSubmit","onClose","onError"})
+@Getter @Setter @Accessors(chain = true)
+@ToString(exclude = {"onSubmit","onClose","onClosePlayer","onError"})
 abstract public class Form<FormResponse> {
     private final Type type;
-    private final String title;
-    @JsonIgnore final private Consumer<FormResponse> onSubmit;
-    @JsonIgnore final private Runnable onClose;
-    @JsonIgnore final private Consumer<Throwable> onError;
+    private String title;
+    @JsonIgnore private Consumer<FormResponse> onSubmit;
+    @JsonIgnore private Runnable onClose = null;
+    @JsonIgnore private Consumer<ProxiedPlayer> onClosePlayer = null;
+    @JsonIgnore private Consumer<Throwable> onError;
+
+    public static Consumer<ProxiedPlayer> UNCLOSEABLE(){
+        return player -> WDForms.getSession(player).getForms().values().stream().toList().get(0).sendTo(player);
+    }
+
+    public Form(@NonNull Type type, @NonNull String title, @Nullable Consumer<FormResponse> onSubmit, @Nullable Runnable onClose, @Nullable Consumer<Throwable> onError){
+        this.type = type;
+        this.title = title;
+        this.onSubmit = onSubmit;
+        this.onClose = onClose;
+        this.onError = onError;
+    }
+    public Form(@NonNull Type type, @NonNull String title, @Nullable Consumer<FormResponse> onSubmit, @Nullable Consumer<ProxiedPlayer> onClosePlayer, @Nullable Consumer<Throwable> onError){
+        this.type = type;
+        this.title = title;
+        this.onSubmit = onSubmit;
+        this.onClosePlayer = onClosePlayer;
+        this.onError = onError;
+    }
 
     public abstract void handleResponse(ProxiedPlayer player, JsonNode node);
 
-    public void submit(FormResponse response) {
-        if (response == null) close();
+    public void submit(ProxiedPlayer player, FormResponse response) {
+        if (response == null) close(player);
         else if (onSubmit != null) onSubmit.accept(response);
     }
-    public void close() {
+    public void close(ProxiedPlayer player) {
         if (onClose != null) onClose.run();
+        if (onClosePlayer != null) onClosePlayer.accept(player);
     }
     public void error(Throwable error) {
         WDForms.getInstance().getLogger().error(error);
@@ -51,11 +70,12 @@ abstract public class Form<FormResponse> {
         private final String value;
         @JsonValue public String getJsonName() {return this.value;}
     }
-    @ToString(exclude = {"onClose","onSubmit","onError"})
+    @ToString(exclude = {"onClose","onClosePlayer","onSubmit","onError"})
     public static abstract class FormBuilder<F extends Form<FormResponse>, T extends Form.FormBuilder<F, T, FormResponse>, FormResponse> {
         protected String title = "";
 
         protected Runnable onClose;
+        protected Consumer<ProxiedPlayer> onClosePlayer;
         protected Consumer<FormResponse> onSubmit;
         protected Consumer<Throwable> onError;
 
@@ -64,15 +84,19 @@ abstract public class Form<FormResponse> {
             return self();
         }
 
-        public T onClose(@NonNull Runnable listener) {
+        public T onClose(Runnable listener) {
             onClose = listener;
             return self();
         }
-        public T onSubmit(@NonNull Consumer<FormResponse> listener) {
+        public T onClosePlayer(Consumer<ProxiedPlayer> listener) {
+            onClosePlayer = listener;
+            return self();
+        }
+        public T onSubmit(Consumer<FormResponse> listener) {
             onSubmit = listener;
             return self();
         }
-        public T onError(@NonNull Consumer<Throwable> listener) {
+        public T onError(Consumer<Throwable> listener) {
             onError = listener;
             return self();
         }

@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.cloudburstmc.protocol.common.util.Preconditions;
 import xxAROX.WDForms.forms.FormValidationError;
 import xxAROX.WDForms.forms.elements.Button;
@@ -17,11 +19,11 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@Getter
+@Getter @Setter @Accessors(chain = true)
 @ToString
 public class MenuForm extends Form<MenuForm.Response> {
-    private final String content;
-    private final List<Button> buttons = new ArrayList<>();
+    private String content;
+    private List<Button> buttons = new ArrayList<>();
 
     public MenuForm(String title, String content, List<Button> buttons, Runnable onClose, Consumer<Throwable> onError){
         super(Type.MENU, title, null, onClose, onError);
@@ -35,7 +37,7 @@ public class MenuForm extends Form<MenuForm.Response> {
 
     @Override public void handleResponse(ProxiedPlayer player, JsonNode node) {
         if (node.isNull()) {
-            close();
+            close(player);
             return;
         }
         if (!node.isInt()) {
@@ -49,7 +51,7 @@ public class MenuForm extends Form<MenuForm.Response> {
             return;
         }
         button.click(player);
-        submit(new Response(index, button, player));
+        submit(player, new Response(index, button, player));
     }
 
     public record Response(int index, Button button, ProxiedPlayer player) {

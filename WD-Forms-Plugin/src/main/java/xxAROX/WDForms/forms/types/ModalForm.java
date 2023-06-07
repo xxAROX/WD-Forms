@@ -5,12 +5,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 import java.util.function.Consumer;
 
 
-@Getter
+@Getter @Setter @Accessors(chain = true)
 @ToString
 public class ModalForm extends Form<Boolean>{
     protected String content;
@@ -18,7 +20,7 @@ public class ModalForm extends Form<Boolean>{
     @JsonProperty("button2") protected String falseButton;
 
     public ModalForm(String title, String content, String trueButton, String falseButton, Consumer<Boolean> onSubmit, Consumer<Throwable> onError) {
-        super(Type.MODAL, title, onSubmit, null, onError);
+        super(Type.MODAL, title, onSubmit, (Runnable) null, onError);
         this.content = content;
         this.trueButton = trueButton;
         this.falseButton = falseButton;
@@ -28,7 +30,7 @@ public class ModalForm extends Form<Boolean>{
     @Override public void handleResponse(ProxiedPlayer player, JsonNode response) {
         boolean v = false;
         if (response.isBoolean()) v = response.booleanValue();
-        submit(v);
+        submit(player, v);
     }
 
 

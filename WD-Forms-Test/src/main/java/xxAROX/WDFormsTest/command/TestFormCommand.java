@@ -36,7 +36,7 @@ public class TestFormCommand extends Command {
         List<Button> buttons = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             int finalI = i;
-            buttons.add(new Button("MenuForm.button." + finalI, Image.create("https://picsum.photos/512"), button -> player.sendMessage("You clicked on button " + finalI)));
+            buttons.add(new Button("MenuForm.button." + finalI, Image.create("https://picsum.photos/64?random="+i), button -> player.sendMessage("You clicked on button " + finalI)));
         }
         MenuForm.menu()
                 .title("MenuForm.title")
