@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f51c03-3506-4b8e-92f0-21e9abb8dbaf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/FormPacketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/WDFormsProtocolUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/java/xxAROX/WDForms/WDFormsProtocolUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/WD-Forms-Plugin/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/WD-Forms-Plugin" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -328,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686150938767</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Removed fasterxml.databind from depends because bugsnag already uses it">
+      <created>1686153827136</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1686153827136</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -346,7 +358,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Ready for production" />
     <MESSAGE value="Fixed plugin.yml" />
     <MESSAGE value="Ignoring downstream forms" />
     <MESSAGE value="Added Form.sendTo(ProxiedPlayer)" />
@@ -371,7 +382,8 @@
     <MESSAGE value="removed auto back and added some @interfaces (idk the name rn)" />
     <MESSAGE value="Added form translation" />
     <MESSAGE value="Updated version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated version" />
+    <MESSAGE value="Removed fasterxml.databind from depends because bugsnag already uses it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed fasterxml.databind from depends because bugsnag already uses it" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
