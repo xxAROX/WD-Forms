@@ -1,5 +1,7 @@
 # WD-forms
-Forms for WaterdogPE
+Forms plugin library for @WaterdogPE.
+
+> #### ![GitHub all releases](https://img.shields.io/github/downloads/xxAROX/WD-Forms/total?color=violet&label=Downloads&style=flat-square)
 
 <details>
 <summary>How to use?</summary>
